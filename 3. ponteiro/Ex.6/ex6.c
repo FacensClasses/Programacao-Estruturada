@@ -8,7 +8,7 @@ int main()
 	setlocale(LC_ALL,"Portuguese_Brazil");
 	
 	int x;
-	float vet[10],*p_vet,maior;
+	float vet[10],*p_vet,med=0;
 	p_vet=vet;
 	
 	for(x=0;x<10;x++)
@@ -19,16 +19,11 @@ int main()
 	}
 	p_vet=vet;
 	
-	maior=*p_vet;
-	
 	for(x=0;x<10;x++)
-	{
-		if(*p_vet>maior)
-			maior=*p_vet;
-		p_vet++;
-	}
+		med+=*p_vet++;
+	med/=10;
 	
-	printf("\nO maior valor digitado é: %.2f.\n",maior);
+	printf("\nO valor da média é: %.2f.\n",med);
 	
 	return 0;
 }
